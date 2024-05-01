@@ -17,7 +17,7 @@ app.listen(port, (erro)=>{
     console.log('Servidor está funcionando na porta 3000');
 })
 
-mongoose.connect("mongodb+srv://Sairth:JFnCMaQYjlBTm3Gi@backenddb.ndngmg0.mongodb.net/node-api?retryWrites=true&w=majority&appName=BackendDB")
+mongoose.connect(/*insira aqui um DB*/)
 .then(()=>{
     console.log("Banco de dados foi conectado");
 })
