@@ -39,7 +39,7 @@ router.put('/professores/att/:id', async (req, res) => {
     try{
         const info = await Info.findByIdAndUpdate(id, req.body);
         if(!info){
-            return res.send(500).json(info, {message: 'Professor não encontrado'})
+            return res.send(500).json({message: 'Professor não encontrado'})
         }
         const infoatt = await Info.findById(id);
         res.status(200).json(infoatt);
@@ -56,7 +56,7 @@ router.delete('/professores/del/:id', async(req, res) => {
         if(!info){
             return res.status(404).json({message: 'Professor não encontrado'});
         }
-        res.status(200).json(info, {message: 'Informações apagadas com sucesso'});
+        res.status(200).json({info, message: 'Informações apagadas com sucesso'});
     } 
     catch(error){
         res.status(500).json({message: error.message});
